@@ -30,7 +30,8 @@ class Test_Topo(Topo):
         s5 = self.addSwitch('s5', cls=OVSKernelSwitch, dpid='0000000000000005',protocols='OpenFlow13')
         s6 = self.addSwitch('s6', cls=OVSKernelSwitch, dpid='0000000000000006',protocols='OpenFlow13')
         s7 = self.addSwitch('s7', cls=OVSKernelSwitch, dpid='0000000000000007',protocols='OpenFlow13')
-        s8 = self.addSwitch('s8’, cls=OVSKernelSwitch, dpid='0000000000000008',protocols='OpenFlow13')
+	s8 = self.addSwitch('s8', cls=OVSKernelSwitch, dpid='0000000000000008',protocols='OpenFlow13')
+        
       
         #Add links 
         self.addLink(s1, s2, port1=1, bw=10, delay=‘12ms’)
