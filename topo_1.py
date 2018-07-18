@@ -7,14 +7,14 @@ from mininet.log import setLogLevel
 from mininet.node import CPULimitedHost, Host, Node
 from mininet.node import OVSKernelSwitch
  
-class Test_Topo(Topo): #le nom de la topologie#
+class Test_Topo(Topo): 
  
     "Test Topology"
     def __init__(self):
         "Create tree Topology"
-        Topo.__init__(self) #initialise la topologie#
+        Topo.__init__(self) 
 
-        #Add hosts #l’ajout des 4 hotes au topologie et assigne pour chaque hote, un nom, une adresse IP, et une adresse MAC#
+        #Add hosts 
 
         h1 = self.addHost('h1', cls=Host, ip='10.0.0.1',mac='10:00:00:00:00:01', defaultRoute=None)
         h2 = self.addHost('h2', cls=Host, ip='10.0.0.2', mac='10:00:00:00:00:02', defaultRoute=None)
@@ -22,7 +22,7 @@ class Test_Topo(Topo): #le nom de la topologie#
         h4 = self.addHost('h4', cls=Host, ip='10.0.0.4', mac='10:00:00:00:00:04', defaultRoute=None)
 
 
-        #Add switches #l’ajout de 8 switches#
+        #Add switches 
         s1 = self.addSwitch('s1', cls=OVSKernelSwitch, dpid='0000000000000001',protocols='OpenFlow13')
         s2 = self.addSwitch('s2', cls=OVSKernelSwitch, dpid='0000000000000002',protocols='OpenFlow13')
         s3 = self.addSwitch('s3', cls=OVSKernelSwitch, dpid='0000000000000003',protocols='OpenFlow13')
@@ -32,7 +32,7 @@ class Test_Topo(Topo): #le nom de la topologie#
         s7 = self.addSwitch('s7', cls=OVSKernelSwitch, dpid='0000000000000007',protocols='OpenFlow13')
         s8 = self.addSwitch('s8’, cls=OVSKernelSwitch, dpid='0000000000000008’,protocols='OpenFlow13')
       
-        #Add links #l’ajout des liens entre les différents nodes (switches et notes), en spécifiant les numéros de ports, la bande passante et le délai pour chaque lien#
+        #Add links 
         self.addLink(s1, s2, port1=1, bw=10, delay=‘12ms’)
         self.addLink(s1, s3, port1=2, bw=10, delay=‘3ms')
 	self.addLink(s1, s6, port1=3, bw=10, delay=‘5ms')
